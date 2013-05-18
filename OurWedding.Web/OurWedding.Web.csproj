@@ -156,6 +156,7 @@
     <Content Include="Content\img\fabric.png" />
     <Content Include="Content\img\paper.png" />
     <Content Include="Global.asax" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\foundation\foundation.alerts.js" />
     <Content Include="Scripts\foundation\foundation.clearing.js" />
     <Content Include="Scripts\foundation\foundation.cookie.js" />
