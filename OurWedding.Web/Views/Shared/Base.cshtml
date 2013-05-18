@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/css/normalize.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/foundation.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="//use.typekit.net/hlj8siy.js"></script>
+	<script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
+
+    <script src="@Url.Content("~/Content/js/vendor/custom.modernizr.js")"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.alerts.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.clearing.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.cookie.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.dropdown.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.forms.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.joyride.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.magellan.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.orbit.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.placeholder.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.reveal.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.section.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.tooltips.js")"></script>
+    <script src="@Url.Content("~/Content/js/foundation/foundation.topbar.js")"></script>
+    <script>
+        $(document).foundation();
+        $(document).ready(function () {
+            // Smooth scrolling navigation
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="main-container">
+        @RenderBody()
+    </div>
+</body>
+</html>
