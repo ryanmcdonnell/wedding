@@ -131,6 +131,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewModels\RsvpViewModel.cs" />
+    <Content Include="Content\foundation\nav.css" />
+    <Content Include="Content\img\coachella.jpg" />
+    <Content Include="Content\img\savethedate.jpg" />
+    <Content Include="Content\foundation\union.css" />
+    <Content Include="Content\img\small_heart.png" />
     <Content Include="OurWeddingInitializer.cs" />
     <Compile Include="OurWeddingContext.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -150,9 +155,6 @@
     <Content Include="Content\foundation\foundation.css" />
     <Content Include="Content\foundation\foundation.mvc.css" />
     <Content Include="Content\foundation\normalize.css" />
-    <Content Include="Content\img\1.jpg" />
-    <Content Include="Content\img\10.jpg" />
-    <Content Include="Content\img\divider2.png" />
     <Content Include="Content\img\fabric.png" />
     <Content Include="Content\img\paper.png" />
     <Content Include="Global.asax" />
@@ -215,16 +217,10 @@
     <Content Include="Views\Shared\Rsvp.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Gallery.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\Visitors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Foundation.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Foundation_Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

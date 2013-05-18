@@ -14,6 +14,8 @@ namespace OurWedding.Web
 				.Include("~/Content/foundation/normalize.css")
 				.Include("~/Content/foundation/foundation.css")
 				.Include("~/Content/foundation/foundation.mvc.css")
+				.Include("~/Content/foundation/union.css")
+				.Include("~/Content/foundation/nav.css")
 				.Include("~/Content/foundation/app.css")
 				);
 
