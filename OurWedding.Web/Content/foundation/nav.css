@@ -516,3 +516,10 @@
 .top-bar .js-generated {
 	display: none;
 }
+
+@media only screen and (max-width: 400px) {
+	.top-bar ul > li a:not(.button) {
+		font-size: 12px;
+		padding: 0 8px;
+	}
+}
