@@ -9,12 +9,24 @@
 	</div>
 	
 	<script>
-		var div = $('#main-title-text');
-		$(window).on('scroll', function () {
-			var st = $(this).scrollTop();
-			div.css({ 'opacity': (1 - st / 400) });
-			div.css({ 'top': (st * 1.3) });
-		});
+		// Turn parallax scrolling off for iOS devices
+		var iOS = false,
+		p = navigator.platform;
+
+		if (p === 'iPad' || p === 'iPhone' || p === 'iPod') {
+			iOS = true;
+		}
+
+
+		// Scroll effect on Home Page box
+		if (iOS == false) {
+			var div = $('#main-title-text');
+			$(window).on('scroll', function () {
+				var st = $(this).scrollTop();
+				div.css({ 'opacity': (1 - st / 400) });
+				div.css({ 'top': (st * 1.3) });
+			});
+		}
 	</script>
 
 	<div class="row navigation" data-magellan-expedition="fixed">
