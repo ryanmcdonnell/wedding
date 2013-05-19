@@ -10,7 +10,7 @@ namespace OurWedding.Web
 	{
 		public static void RegisterBundles(BundleCollection bundles)
 		{
-			bundles.Add(new StyleBundle("~/css/foundation")
+			bundles.Add(new StyleBundle("~/Content/foundation/all")
 				.Include("~/Content/foundation/normalize.css")
 				.Include("~/Content/foundation/foundation.css")
 				.Include("~/Content/foundation/foundation.mvc.css")
