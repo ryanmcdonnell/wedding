@@ -1,15 +1,23 @@
 ﻿<a id="home"></a>
 <section id="home-page" data-magellan-destination="home">
-    <div id="main-title-container">
-        <div id="main-title-text">
-            
+	<div id="main-title-container">
+		<div id="main-title-text">
 			<h1>Sepi + Ryan</h1>
-	        <h2>August 3, 2013</h2>
+			<h2>08&middot;03&middot;2013</h2>
 			<h3>Costa Mesa, CA</h3>
-        </div>
-    </div>
+		</div>
+	</div>
+	
+	<script>
+		var div = $('#main-title-text');
+		$(window).on('scroll', function () {
+			var st = $(this).scrollTop();
+			div.css({ 'opacity': (1 - st / 400) });
+			div.css({ 'top': (st * 1.3) });
+		});
+	</script>
 
-    <div class="row navigation" data-magellan-expedition="fixed">
+	<div class="row navigation" data-magellan-expedition="fixed">
         <nav class="top-bar" id="main-menu" style="">
             <ul>
                 <!-- Title Area -->
@@ -31,7 +39,7 @@
                         <a href="#wedding" class="scroll">Wedding</a>
                     </li>
                     <li data-magellan-arrival="visitors" class="nav-item">
-                        <a href="#visitors" class="scroll">Visitors</a>
+                        <a href="#visitors" class="scroll">Accomodations</a>
                     </li>
                     <li data-magellan-arrival="rsvp" class="nav-item">
                         <a href="#rsvp" class="scroll">RSVP</a>

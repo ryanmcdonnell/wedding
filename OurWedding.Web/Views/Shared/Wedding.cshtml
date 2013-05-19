@@ -1,40 +1,92 @@
 ﻿<!-- Wedding -->
 <a id="wedding"></a>
 <section id="wedding-page" class="row" data-magellan-destination='wedding'>
+	
+	<div id="map"></div>
 
+	<div class="venue-wrapper">
 
-    <div class="twelve columns wedding-wrapper">
+		<div id="venue-details">
+			<p>The ceremony, cocktail hour, and reception will be held at</p>
+			<img src="@Url.Content("~/Content/img/chuckjoneslogo.png")" alt="Chuck Jones Center by 24 Carrots" style="margin: 1em 0;" />
+			<p>
+				3321 Hyland Ave<br />
+				Costa Mesa, CA 92626<br />
+				<a href="http://goo.gl/maps/msmA7">Get Directions</a>
+			</p>
+			<h4>Saturday, August 3, 2013 @@ 5:00pm</h4>
+			<p>
+				Self-parking is available. Please plan to arrive before the ceremony starts at 5pm.
+			</p>
+			<p>
+				<strong>Bring your dancing shoes and be ready to keep the party going until 1:00am. Complimentary bar service will be available.</strong>
+			</p>
+			<p>
+				
+			</p>
+			<p>
+				<strong>Who is Chuck Jones?</strong><br/>
+				Chuck Jones was the Academy-Award winning animator and creator of beloved Warner Bros. characters such as Bugs Bunny, Daffy Duck, Porky Pig, and Wile E. Coyote. He also wrote, produced, and directed the animated television classic, <a href="http://www.youtube.com/watch?v=--aSgNEbmnI"><em>Dr. Seuss' How the Grinch Stole Christmas</em></a>.
+			</p>
+		</div>
 
-        <div id="wedding-details">
-            <h2>The wedding will be held at
-            </h2>
-            <h1>Carlton Gardens
-            </h1>
-            <h1>21 Nicholson St
-            </h1>
-            <h2>on the 21st July 2013
-            </h2>
-            <h3>11:00 am - 1:00 pm
-            </h3>
-            <a href="#" data-reveal-id="mapModal">
-                <h3>click for map
-                </h3>
-            </a>
-
-        </div>
-
-    </div>
-
-    <div id="mapModal" class="reveal-modal hidden">
-        <div style="width: 425px; height: 350px">
-            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=carlton%2Bgardens&ie=UTF8&z=17&t=m&iwloc=near&output=embed"></iframe>
-            <br>
-            <table width="425" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                    <td align="left"><small><a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=carlton%2Bgardens&ie=UTF8&z=17&t=m&iwloc=near">View Larger Map</a></small></td>
-                    <td align="right"><small><a href="http://www.embedgooglemap.com">embed google map</a></small></td>
-                </tr>
-            </table>
-        </div>
-    </div>
+	</div>
 </section>
+
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script>
+	if (screen.width > 767) {
+		$(document).ready(function () {
+
+			function initialize() {
+				var image = 'http://ryanandsepi.com/Content/img/map-logo.png';
+				var center = new google.maps.LatLng(33.692995, -117.951021);
+				var myLatlng = new google.maps.LatLng(33.692364, -117.924821);
+				var myOptions = {
+					zoom: 14,
+					scrollwheel: false,
+					center: center,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				}
+
+				var map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+				var contentString = '<div class="map-info"><p><strong>Chuck Jones Center</strong><br /><em>by 24 carrots</em></p><p>3321 Hyland Avenue<br />Costa Mesa, CA 92614</p><p><a href="http://maps.google.com/maps?q=3321+Hyland+Avenue,+Costa+Mesa,+CA+92614&hl=en&sll=33.692189,-117.924725&sspn=0.002328,0.003071&hnear=3321+Hyland+Ave,+Costa+Mesa,+California+92626&t=m&z=17" target="_blank">Get Directions</a></p></div>';
+
+				var infowindow = new google.maps.InfoWindow({
+					content: contentString
+				});
+
+				var marker = new google.maps.Marker({
+					position: myLatlng,
+					map: map,
+					icon: image,
+					title: 'Chuck Jones Center'
+				});
+				google.maps.event.addListener(marker, 'click', function () {
+					infowindow.open(map, marker);
+				});
+			}
+
+			google.maps.event.addDomListener(window, 'load', initialize);
+		});
+	};
+	
+	/* ScaleFix for iOS */
+	(function (document) {
+		window.MBP = window.MBP || {};
+		MBP.viewportmeta = document.querySelector && document.querySelector('meta[name="viewport"]');
+		MBP.ua = navigator.userAgent;
+		MBP.scaleFix = function () {
+			if (MBP.viewportmeta && /iPhone|iPad|iPod/.test(MBP.ua) && !/Opera Mini/.test(MBP.ua)) {
+				MBP.viewportmeta.content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+				document.addEventListener("gesturestart", MBP.gestureStart, false);
+			}
+		};
+		MBP.gestureStart = function () {
+			MBP.viewportmeta.content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+		};
+	})(document);
+
+	MBP.scaleFix();
+</script>

@@ -132,7 +132,10 @@
   <ItemGroup>
     <Compile Include="ViewModels\RsvpViewModel.cs" />
     <Content Include="Content\foundation\nav.css" />
+    <Content Include="Content\img\bg-map.jpg" />
+    <Content Include="Content\img\chuckjoneslogo.png" />
     <Content Include="Content\img\coachella.jpg" />
+    <Content Include="Content\img\map-logo.png" />
     <Content Include="Content\img\savethedate.jpg" />
     <Content Include="Content\foundation\union.css" />
     <Content Include="Content\img\small_heart.png" />
