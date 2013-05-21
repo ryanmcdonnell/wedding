@@ -33,7 +33,7 @@ namespace OurWedding.Web.Controllers
 				{
 					var rsvp = new Rsvp
 						{
-							Accepted = model.Accepted,
+							Accepted = model.Accepted == "Yes" ? true : false,
 							GuestName = model.GuestName,
 							AdditionalGuestNames = model.AdditionalGuestNames,
 							SongRequest = model.SongRequest,

@@ -9,7 +9,7 @@ namespace OurWedding.Web.ViewModels
 	public class RsvpViewModel
 	{
 		[Required(ErrorMessage = "Please indicate if you'll be attending")]
-		public bool Accepted { get; set; }
+		public string Accepted { get; set; }
 
 		[Required(ErrorMessage = "Please enter your full name")]
 		[Display(Name = "Your full name")]
