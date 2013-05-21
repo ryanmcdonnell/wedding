@@ -16,7 +16,8 @@ namespace OurWedding.Web
     {
         protected void Application_Start()
         {
-			Database.SetInitializer(new OurWeddingContextInitializer());
+			if(Request.IsLocal)
+				Database.SetInitializer(new OurWeddingContextInitializer());
 
             AreaRegistration.RegisterAllAreas();
 
