@@ -10,6 +10,10 @@ body {
 	padding: 0px;
 }
 
+#map img {
+    max-width: none !important;
+}
+
 #submit-form { font-family: "brandon-grotesque",sans-serif;background-color: #a73e69;color: white;font-weight: bold;}
 
 h1, h2, h3 { font-family: 'Oswald', sans-serif;text-transform: uppercase;letter-spacing: 0.25em; }
