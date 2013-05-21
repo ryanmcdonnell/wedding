@@ -43,8 +43,7 @@ namespace OurWedding.Web.Controllers
 					context.Rsvps.Add(rsvp);
 					context.SaveChanges();
 
-					if(!Request.IsLocal)
-						SendEmail(rsvp);
+					SendEmail(rsvp);
 
 					return new PartialViewResult { ViewName = "RsvpSuccess" };
 				}
