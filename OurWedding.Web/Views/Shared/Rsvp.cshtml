@@ -1,76 +1,65 @@
-﻿<a id="rsvp"></a>
+﻿@using System.Web.UI.HtmlControls
+@model OurWedding.Web.ViewModels.RsvpViewModel
+<a id="rsvp"></a>
 <section class="row" id="rsvp-page" data-magellan-destination='rsvp'>
 
-    <div class="page-wrapper">
+	<div class="page-wrapper">
 
-        <div class="page">
-            <h2 class="align-center">RSVP
-            </h2>
-            <img alt="divider" class="page-divider" src="@Url.Content("~/Content/img/small_heart.png")" />
-            <br />
-            <p>
-                <em>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</em>
-            </p>
+		<div class="page">
+			<img alt="story" id="story-photo" src="@Url.Content("~/Content/img/montage.jpg")" />
+			<h2 class="align-center">RSVP
+			</h2>
+			<img alt="divider" class="page-divider" src="@Url.Content("~/Content/img/small_heart.png")" />
+			<br />
+			<p>
+				<em>Complete the form below with your full name and the names of your additional guests. We ask that all RSVPs be received by July 1st, 2013.</em>
+			</p>
 
-            <form id="contact-form">
-                <label>
-                    Name:
-                </label>
-                <input type="text" id="form-name" placeholder="Name" />
-                <label>
-                    Phone:
-                </label>
-                <input type="text" class="twelve" id="form-number" placeholder="Contact Number" />
-                <div id="error-notify">
-                    <div class="alert-box alert">Name and number are both required</div>
-                </div>
-                <textarea id="form-msg" placeholder="Message">
-              </textarea>
+			@using (Ajax.BeginForm("Rsvp", new AjaxOptions { UpdateTargetId = "rsvpresult" }))
+			{
+				@Html.LabelFor(x => x.GuestName)
+				@Html.TextBoxFor(x => x.GuestName)
+				@Html.ValidationMessageFor(x => x.GuestName)
 
-                <div class="row">
+				@Html.LabelFor(x => x.AdditionalGuestNames)
+				@Html.TextAreaFor(x => x.AdditionalGuestNames)
+				@Html.ValidationMessageFor(x => x.AdditionalGuestNames)
 
-                    <div class="seven columns">
-                        <label for="radio1">
-                            <input name="radios" type="radio" id="radio1" checked>
-                            <span class="custom radio"></span>
-                            I / We will be attending
-                        </label>
-                        <label for="radio2">
-                            <input name="radios" type="radio" id="radio2">
-                            <span class="custom radio checked"></span>
-                            Unfortunately I / We are unable to attend
-                        </label>
+				<div class="row">
+					<div class="large-3 columns">
+						<label>
+							@Html.RadioButtonFor(x => x.Accepted, true)
+							<span class="custom radio"></span>
+							Gladly Accepts
+						</label>
+					</div>
+					<div class="large-9 columns">
+						<label>
+							@Html.RadioButtonFor(x => x.Accepted, true)
+							<span class="custom radio"></span>
+							Sadly Declines
+						</label>
+					</div>
+				</div>
+				@Html.ValidationMessageFor(x => x.Accepted)
+	   
+				@Html.LabelFor(x => x.SongRequest)
+				@Html.TextBoxFor(x => x.SongRequest)
+				@Html.ValidationMessageFor(x => x.SongRequest)
 
-                    </div>
+				@Html.LabelFor(x => x.Comments)
+				@Html.TextAreaFor(x => x.Comments)
+				@Html.ValidationMessageFor(x => x.Comments)
+				<span>Please include your phone number or e-mail address if you require a response.</span>
 
-                    <div class="five columns">
-                        <label for="checkbox1">
-                            <input type="checkbox" id="checkbox1" checked>
-                            <span class="custom checkbox"></span>
-                            No dietary requirements
-                        </label>
-                        <label for="checkbox2">
-                            <input type="checkbox" id="checkbox2">
-                            <span class="custom checkbox"></span>
-                            Vegetarian
-                        </label>
-                        <label for="checkbox3">
-                            <input type="checkbox" id="checkbox3">
-                            Gluten Free
-                        </label>
-                    </div>
-                </div>
+				<div id="rsvpresult" style="margin-top: 10px;">
+					<input class="form-button" id="submit-form" type="submit" value="Send my RSVP">
+				</div>
+				
+			}
 
-                <input class="form-button" id="submit-form" type="submit" value="Send">
-            </form>
-            <div id="notify">
-                <div class="alert-box success">Thankyou, your RSVP has been sent!</div>
-            </div>
+		</div>
 
-
-
-        </div>
-
-    </div>
+	</div>
 
 </section>

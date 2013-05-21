@@ -10,6 +10,8 @@ body {
 	padding: 0px;
 }
 
+#submit-form { font-family: "brandon-grotesque",sans-serif;background-color: #a73e69;color: white;font-weight: bold;}
+
 h1, h2, h3 { font-family: 'Oswald', sans-serif;text-transform: uppercase;letter-spacing: 0.25em; }
 
 h3 { letter-spacing: 0.1em; }
@@ -34,7 +36,7 @@ h4 { font-family: "brandon-grotesque",sans-serif;font-size: 24px;font-weight: bo
 	max-width:492px;
 	position:relative;
 	z-index:22;
-	background:#FAFAFA url('../img/paper.png');
+	background-color: White;
 	-webkit-box-shadow: 0px 0px 30px 5px rgba(0,0,0,.4);
 	box-shadow: 0px 0px 30px 5px rgba(0,0,0,.4);
 	-moz-box-sizing: border-box;

@@ -135,11 +135,14 @@
     <Content Include="Content\img\bg-map.jpg" />
     <Content Include="Content\img\chuckjoneslogo.png" />
     <Content Include="Content\img\coachella.jpg" />
+    <Content Include="Content\img\cratelogo.png" />
+    <Content Include="Content\img\macys.png" />
     <Content Include="Content\img\map-logo.png" />
+    <Content Include="Content\img\montage.jpg" />
     <Content Include="Content\img\savethedate.jpg" />
     <Content Include="Content\foundation\union.css" />
     <Content Include="Content\img\small_heart.png" />
-    <Content Include="OurWeddingInitializer.cs" />
+    <Compile Include="OurWeddingInitializer.cs" />
     <Compile Include="OurWeddingContext.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -180,6 +183,13 @@
     <Content Include="Scripts\jquery-2.0.0.js" />
     <Content Include="Scripts\jquery-2.0.0.min.js" />
     <Content Include="Scripts\jquery.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\zepto.js" />
     <Content Include="Web.config" />
@@ -191,6 +201,9 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\jquery-2.0.0.min.map" />
+    <Content Include="Views\Home\RsvpSuccess.cshtml" />
+    <Content Include="Views\Home\RsvpError.cshtml" />
+    <Content Include="Views\Shared\Registry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -203,9 +216,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\_ViewStart.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\Base.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Home.cshtml" />
