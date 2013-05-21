@@ -14,17 +14,8 @@
 			<p>
 				<em>Complete the form below with your full name and the names of your additional guests. We ask that all RSVPs be received by July 1st, 2013.</em>
 			</p>
-			
-			<script>
-				$('form').submit(function () {
-					if ($(this).valid()) {
-						$(':submit', this).attr('disabled', 'disabled');
-						$(':submit', this).val('Please wait...');
-					}
-				});
-			</script>
 
-			@using (Ajax.BeginForm("Rsvp", new AjaxOptions { UpdateTargetId = "rsvpresult" }))
+			@using (Ajax.BeginForm("Rsvp", new AjaxOptions { UpdateTargetId = "rsvpresult", LoadingElementDuration = 0, LoadingElementId = "submitting"}))
 			{
 				@Html.LabelFor(x => x.GuestName)
 				@Html.TextBoxFor(x => x.GuestName)
@@ -63,6 +54,10 @@
 
 				<div id="rsvpresult" style="margin-top: 10px;">
 					<input class="form-button" id="submit-form" type="submit" value="Send my RSVP">
+				</div>
+	   
+				<div id="submitting" style="display: none;">
+					<p style="text-align: center;">Submitting RSVP, please wait...</p>
 				</div>
 				
 			}
